@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <StaticWebAssetBasePath>App_Plugins/IntlTelInput</StaticWebAssetBasePath>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <EmbedUntrackedSources>false</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
+    <PathMap>$(MSBuildThisFileDirectory)=/src/</PathMap>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Umbraco.Community.IntlTelInput</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Meshari Aldebas</Authors>
+    <Company>Meshari Aldebas</Company>
+    <Product>Umbraco International Phone Input</Product>
+    <Title>Umbraco Forms International Phone Input</Title>
+    <Description>An Umbraco Forms field type that provides an international phone number input with country code dropdown, flags, E.164 validation, and formatting. Powered by intl-tel-input.</Description>
+    <PackageTags>umbraco umbraco-marketplace umbraco-forms umbraco-package phone intl-tel-input international-phone forms field-type</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/mesharideb/Umbraco.Community.IntlTelInput</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mesharideb/Umbraco.Community.IntlTelInput</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright (c) Meshari Aldebas</Copyright>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Core" Version="17.0.0" />
+    <PackageReference Include="Umbraco.Forms" Version="17.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+    <None Include="..\..\assets\icon.png" Pack="true" PackagePath="\" Condition="Exists('..\..\assets\icon.png')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\**\*.cshtml" />
+    <None Include="Views\**\*.cshtml" Pack="true" PackagePath="contentFiles\any\any\Views;content\Views" BuildAction="None" CopyToOutput="true" />
+    <None Include="Views\**\*.cshtml" Pack="false" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
