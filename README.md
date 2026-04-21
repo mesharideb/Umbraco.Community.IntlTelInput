@@ -2,6 +2,10 @@
 
 # Umbraco.Community.IntlTelInput
 
+[![NuGet](https://img.shields.io/nuget/v/Umbraco.Community.IntlTelInput?logo=nuget&label=NuGet)](https://www.nuget.org/packages/Umbraco.Community.IntlTelInput/)
+[![Downloads](https://img.shields.io/nuget/dt/Umbraco.Community.IntlTelInput?logo=nuget&color=blue)](https://www.nuget.org/packages/Umbraco.Community.IntlTelInput/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 An Umbraco Forms field type that provides an international phone-number input with country-code dropdown, flags, E.164 validation and as-you-type formatting. Powered by the [intl-tel-input](https://github.com/jackocnr/intl-tel-input) library.
 
 ![Screenshot](assets/screenshot-1.png?raw=true)
