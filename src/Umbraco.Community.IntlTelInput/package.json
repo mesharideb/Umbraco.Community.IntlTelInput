@@ -1,0 +1,8 @@
+{
+  "name": "umbraco-community-intltelinput-deps",
+  "private": true,
+  "description": "Pins third-party frontend libraries bundled into the Umbraco.Community.IntlTelInput NuGet package.",
+  "dependencies": {
+    "intl-tel-input": "^25.15.0"
+  }
+}
