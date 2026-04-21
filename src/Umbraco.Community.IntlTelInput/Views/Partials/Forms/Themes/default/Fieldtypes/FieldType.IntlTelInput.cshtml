@@ -1,0 +1,39 @@
+@model Umbraco.Forms.Web.Models.FieldViewModel
+@{
+    var s = Model.AdditionalSettings;
+    string Get(string key, string fallback) => s.TryGetValue(key, out var v) && !string.IsNullOrEmpty(v) ? v : fallback;
+    bool Bool(string key, bool fallback) => s.TryGetValue(key, out var v) && !string.IsNullOrEmpty(v)
+        ? string.Equals(v, "true", StringComparison.OrdinalIgnoreCase) : fallback;
+    string Js(bool b) => b ? "true" : "false";
+
+    var errorMessage = Get("ValidationErrorMessage", "Please enter a valid phone number");
+}
+
+<div class="intl-tel-input-field"
+     data-field-id="@Model.Id"
+     data-initial-country="@Get("InitialCountry", "us").ToLowerInvariant()"
+     data-preferred-countries="@Get("PreferredCountries", "")"
+     data-only-countries="@Get("OnlyCountries", "")"
+     data-exclude-countries="@Get("ExcludeCountries", "")"
+     data-separate-dial-code="@Js(Bool("SeparateDialCode", true))"
+     data-show-flags="@Js(Bool("ShowFlags", true))"
+     data-allow-dropdown="@Js(Bool("AllowDropdown", true))"
+     data-auto-placeholder="@Get("AutoPlaceholder", "polite")"
+     data-national-mode="@Js(Bool("NationalMode", true))"
+     data-format-on-display="@Js(Bool("FormatOnDisplay", true))"
+     data-strict-mode="@Js(Bool("StrictMode", false))"
+     data-validation-message="@errorMessage">
+    <input type="tel"
+           id="@(Model.Id)_display"
+           class="form-control intl-tel-input-display"
+           placeholder="@Model.PlaceholderText"
+           autocomplete="tel"
+           @(Model.Mandatory ? Html.Raw("aria-required=\"true\"") : null) />
+    <input type="hidden"
+           name="@Model.Name"
+           id="@Model.Id"
+           data-umb="@Model.Id"
+           value="@Model.ValueAsHtmlString"
+           @(Model.Mandatory ? Html.Raw($"data-val=\"true\" data-val-required=\"{Model.RequiredErrorMessage}\"") : null)
+           data-val-intlphone="@errorMessage" />
+</div>

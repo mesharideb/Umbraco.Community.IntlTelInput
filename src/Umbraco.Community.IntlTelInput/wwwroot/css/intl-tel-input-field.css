@@ -1,0 +1,154 @@
+:root {
+    --itif-border-color: #e9ebec;
+    --itif-border-color-focus: #1f383e;
+    --itif-border-color-error: #d92d20;
+    --itif-text-color: #212529;
+    --itif-placeholder-color: #697a7e;
+    --itif-bg: #fff;
+    --itif-bg-hover: #f8f9fa;
+    --itif-highlight-bg: #1f383e;
+    --itif-highlight-color: #fff;
+    --itif-height: 48px;
+    --itif-font-size: 14px;
+    --itif-border-radius: 0;
+    --itif-country-min-width: 95px;
+}
+
+.intl-tel-input-field {
+    width: 100%;
+}
+
+.intl-tel-input-field .iti {
+    display: flex !important;
+    width: 100%;
+}
+
+.intl-tel-input-field .iti__country-container {
+    position: static !important;
+    padding: 0 !important;
+    flex-shrink: 0;
+}
+
+.intl-tel-input-field .iti__selected-country {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--itif-country-min-width);
+    height: var(--itif-height);
+    padding-block: 0 !important;
+    padding-inline: 12px 30px !important;
+    margin: 0 !important;
+    background-color: var(--itif-bg);
+    border: 1px solid var(--itif-border-color) !important;
+    border-inline-end: 0 !important;
+    border-radius: var(--itif-border-radius) !important;
+    font-size: var(--itif-font-size);
+    font-weight: 500;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 8px center !important;
+    background-size: 12px 10px !important;
+}
+
+.intl-tel-input-field .iti__selected-country:hover {
+    background-color: var(--itif-bg-hover);
+}
+
+.intl-tel-input-field .iti__selected-country-primary {
+    display: flex !important;
+    padding: 0 !important;
+}
+
+.intl-tel-input-field .iti__arrow {
+    display: none !important;
+}
+
+.intl-tel-input-field .iti__selected-dial-code {
+    font-size: var(--itif-font-size);
+    font-weight: 500;
+    color: var(--itif-text-color);
+}
+
+.intl-tel-input-field .iti input,
+.intl-tel-input-field .iti input.iti__tel-input,
+.intl-tel-input-field .iti input[type="tel"] {
+    flex: 1 !important;
+    width: 100% !important;
+    height: var(--itif-height) !important;
+    padding-block: 0 !important;
+    padding-inline: 12px !important;
+    margin: 0 !important;
+    border: 1px solid var(--itif-border-color) !important;
+    border-radius: var(--itif-border-radius) !important;
+    font-size: var(--itif-font-size);
+    box-sizing: border-box;
+}
+
+.intl-tel-input-field .iti input::placeholder {
+    color: var(--itif-placeholder-color);
+}
+
+.intl-tel-input-field .iti input:focus {
+    border-color: var(--itif-border-color-focus) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.iti__dropdown-content {
+    border-radius: 4px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid var(--itif-border-color) !important;
+    background: var(--itif-bg) !important;
+}
+
+.iti__country-list {
+    max-height: 250px !important;
+}
+
+.iti__country {
+    padding: 10px 12px !important;
+    font-size: var(--itif-font-size);
+}
+
+.iti__country:hover,
+.iti__country--highlight {
+    background-color: var(--itif-highlight-bg) !important;
+    color: var(--itif-highlight-color) !important;
+}
+
+.iti__country:hover .iti__dial-code,
+.iti__country:hover .iti__country-name,
+.iti__country--highlight .iti__dial-code,
+.iti__country--highlight .iti__country-name {
+    color: var(--itif-highlight-color) !important;
+}
+
+.iti__search-input {
+    padding: 10px 12px !important;
+    font-size: var(--itif-font-size) !important;
+    border: none !important;
+    border-block-end: 1px solid var(--itif-border-color) !important;
+}
+
+.iti__search-input:focus {
+    outline: none !important;
+    border-block-end-color: var(--itif-border-color-focus) !important;
+}
+
+.intl-tel-input-field.intl-tel-input-error .iti__selected-country,
+.intl-tel-input-field.intl-tel-input-error .iti input {
+    border-color: var(--itif-border-color-error) !important;
+}
+
+.intl-tel-input-error-message {
+    display: block;
+    margin-block-start: 4px;
+    font-size: var(--itif-font-size);
+    color: var(--itif-border-color-error);
+}
+
+[dir="rtl"] .intl-tel-input-field .iti {
+    direction: ltr;
+    flex-direction: row-reverse;
+}
