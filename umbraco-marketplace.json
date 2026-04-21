@@ -1,0 +1,30 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "Title": "International Phone Input for Umbraco Forms",
+  "Description": "A custom Umbraco Forms field type that provides an international phone-number input with country-code dropdown, flags, E.164 validation and as-you-type formatting. Powered by the excellent intl-tel-input library.",
+  "Categories": "Forms",
+  "PackageType": "Package",
+  "LicenseTypes": ["Free"],
+  "Tags": [
+    "forms",
+    "phone",
+    "international",
+    "field-type",
+    "validation"
+  ],
+  "AuthorDetails": {
+    "Name": "Meshari Aldebas",
+    "Description": "Umbraco developer building community packages that make Forms better.",
+    "Url": "https://github.com/mesharideb",
+    "SyncContributorsFromRepository": true
+  },
+  "DocumentationUrl": "https://github.com/mesharideb/Umbraco.Community.IntlTelInput#readme",
+  "IssueTrackerUrl": "https://github.com/mesharideb/Umbraco.Community.IntlTelInput/issues",
+  "Screenshots": [
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/mesharideb/Umbraco.Community.IntlTelInput/main/assets/screenshot-1.png",
+      "Caption": "International phone field rendered on the front-end with flag dropdown and E.164 validation."
+    }
+  ],
+  "LookingForContributors": true
+}
