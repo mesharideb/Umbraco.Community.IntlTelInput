@@ -1,0 +1,4 @@
+src/Umbraco.Community.IntlTelInput/wwwroot/js/intlTelInputWithUtils.min.js linguist-vendored
+src/Umbraco.Community.IntlTelInput/wwwroot/css/intlTelInput.css linguist-vendored
+src/Umbraco.Community.IntlTelInput/wwwroot/img/*.webp linguist-vendored
+src/Umbraco.Community.IntlTelInput/package-lock.json linguist-generated
